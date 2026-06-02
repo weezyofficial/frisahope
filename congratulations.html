@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Thank You Saying Yes</h1>
+        <button class="btn yes" type="button" onclick="goToSchedule()">
+            <span>Okay to proceed next</span>
+            <i class="bi bi-arrow-right-circle-fill"></i>
+        </button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function goToSchedule() {
+            window.location.href = 'schedule.html';
+        }
+    </script>
+</body>
+</html>

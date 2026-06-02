@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Information</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Our Date Information</h1>
+
+        <div class="info-list">
+            <div class="info-item">
+                <i class="bi bi-calendar-heart-fill"></i>
+                <div>
+                    <span>Date</span>
+                    <strong id="finalDate">Not selected</strong>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="bi bi-clock-fill"></i>
+                <div>
+                    <span>Time</span>
+                    <strong id="finalTime">Not selected</strong>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="bi bi-shop"></i>
+                <div>
+                    <span>Restaurant</span>
+                    <strong id="finalRestaurant">Not selected</strong>
+                </div>
+            </div>
+        </div>
+
+        <p class="success final-message">All set! I cannot wait for our date.</p>
+    </div>
+
+    <script>
+        document.getElementById('finalDate').textContent = localStorage.getItem('dateDay') || 'Not selected';
+        document.getElementById('finalTime').textContent = localStorage.getItem('dateTime') || 'Not selected';
+        document.getElementById('finalRestaurant').textContent = localStorage.getItem('restaurant') || 'Not selected';
+    </script>
+</body>
+</html>

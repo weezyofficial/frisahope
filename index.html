@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Would you like to go on a date with me?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Would you like to go on a date with me?</h1>
+        <div class="buttons">
+            <button class="btn yes" onclick="handleYes()">
+                <i class="bi bi-heart-fill"></i>
+                <span>Yes</span>
+            </button>
+            <button class="btn no" id="noBtn" type="button">
+                <i class="bi bi-x-lg"></i>
+                <span>No</span>
+            </button>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function handleYes() {
+            window.location.href = 'congratulations.html';
+            document.getElementById('message').innerHTML = '<p class="success">Yay! I\'m so excited! 💕</p>';
+        }
+
+        function handleNo() {
+            document.getElementById('message').innerHTML = '<p class="sad">That\'s okay, maybe another time! 😢</p>';
+        }
+        const noBtn = document.getElementById('noBtn');
+
+        function moveNoButton() {
+            const container = document.querySelector('.container');
+            const containerRect = container.getBoundingClientRect();
+            const buttonWidth = noBtn.offsetWidth;
+            const buttonHeight = noBtn.offsetHeight;
+            const padding = 18;
+            const minX = containerRect.left + padding;
+            const minY = containerRect.top + padding;
+            const maxX = Math.max(minX, containerRect.right - buttonWidth - padding);
+            const maxY = Math.max(minY, containerRect.bottom - buttonHeight - padding);
+
+            noBtn.classList.add('running');
+            noBtn.style.left = `${Math.random() * (maxX - minX) + minX}px`;
+            noBtn.style.top = `${Math.random() * (maxY - minY) + minY}px`;
+        }
+
+        noBtn.addEventListener('mouseenter', moveNoButton);
+        noBtn.addEventListener('mousedown', moveNoButton);
+        noBtn.addEventListener('touchstart', (event) => {
+            event.preventDefault();
+            moveNoButton();
+        });
+    </script>
+</body>
+</html>

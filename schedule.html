@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pick a Date</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="container">
+        <h1>So when you are free</h1>
+        <form class="date-form" onsubmit="confirmSchedule(event)">
+            <label class="field">
+                <span><i class="bi bi-calendar-heart"></i> Pick up date</span>
+                <input type="date" id="date" required>
+            </label>
+
+            <label class="field">
+                <span><i class="bi bi-clock-heart"></i> Pick up time</span>
+                <input type="time" id="time" required>
+            </label>
+
+            <button class="btn yes" type="submit">
+                <span>Submit</span>
+                <i class="bi bi-check-circle-fill"></i>
+            </button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        function confirmSchedule(event) {
+            event.preventDefault();
+
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            localStorage.setItem('dateDay', date);
+            localStorage.setItem('dateTime', time);
+            window.location.href = 'restaurants.html';
+        }
+    </script>
+</body>
+</html>
