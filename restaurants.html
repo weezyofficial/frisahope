@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Where We Eat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="love.css">
+</head>
+<body>
+    <div class="container food-container">
+        <h1>Where should we eat?</h1>
+        <p class="subtitle" id="dateSummary"></p>
+
+        <div class="restaurant-grid">
+            <button class="restaurant-card" type="button" onclick="chooseRestaurant(this, 'Mcdo')">
+                <img src="https://www.google.com/s2/favicons?domain=mcdonalds.com.ph&sz=128" alt="Mcdo logo">
+                <span>Mcdo</span>
+            </button>
+
+            <button class="restaurant-card" type="button" onclick="chooseRestaurant(this, 'Jollibee')">
+                <img src="https://www.google.com/s2/favicons?domain=jollibee.com.ph&sz=128" alt="Jollibee logo">
+                <span>Jollibee</span>
+            </button>
+
+            <button class="restaurant-card" type="button" onclick="chooseRestaurant(this, 'Mang Inasal')">
+                <img src="https://www.google.com/s2/favicons?domain=manginasal.ph&sz=128" alt="Mang Inasal logo">
+                <span>Mang Inasal</span>
+            </button>
+
+            <button class="restaurant-card" type="button" onclick="chooseRestaurant(this, 'KFC')">
+                <img src="logo/kfclogo.png" alt="KFC logo">
+                <span>KFC</span>
+            </button>
+
+            <button class="restaurant-card" type="button" onclick="chooseRestaurant(this, 'Chowking')">
+                <img src="https://www.google.com/s2/favicons?domain=chowkingdelivery.com&sz=128" alt="Chowking logo">
+                <span>Chowking</span>
+            </button>
+        </div>
+
+        <button class="btn yes submit-choice" id="submitRestaurant" type="button" onclick="submitRestaurant()" disabled>
+            <span>Submit choice</span>
+            <i class="bi bi-check-circle-fill"></i>
+        </button>
+        <div id="message"></div>
+    </div>
+
+    <script>
+        const dateDay = localStorage.getItem('dateDay');
+        const dateTime = localStorage.getItem('dateTime');
+
+        if (dateDay && dateTime) {
+            document.getElementById('dateSummary').textContent = `Our date: ${dateDay} at ${dateTime}`;
+        }
+
+        let selectedRestaurant = '';
+
+        function chooseRestaurant(button, name) {
+            document.querySelectorAll('.restaurant-card').forEach((card) => {
+                card.classList.remove('selected');
+            });
+
+            button.classList.add('selected');
+            selectedRestaurant = name;
+            localStorage.setItem('restaurant', name);
+            document.getElementById('submitRestaurant').disabled = false;
+            document.getElementById('message').innerHTML = '';
+        }
+
+        function submitRestaurant() {
+            if (!selectedRestaurant) {
+                return;
+            }
+
+            window.location.href = 'date-info.html';
+        }
+    </script>
+</body>
+</html>
