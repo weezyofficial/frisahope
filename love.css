@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+=======
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background:
@@ -49,7 +58,11 @@ h1 {
     font-weight: 800;
     margin: -24px 0 28px;
 }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
 .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -57,7 +70,11 @@ h1 {
     justify-content: center;
     margin-bottom: 30px;
 }
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
 .btn {
     display: inline-flex;
     align-items: center;
@@ -106,6 +123,7 @@ h1 {
     background: #1f2330;
     transform: translateY(-3px);
 }
+<<<<<<< HEAD
 
 .success {
     color: #4caf50;
@@ -114,6 +132,16 @@ h1 {
     animation: fadeIn 0.5s ease;
 }
 
+=======
+
+.success {
+    color: #4caf50;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: fadeIn 0.5s ease;
+}
+
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
 .sad {
     color: #757575;
     font-size: 1.5rem;
@@ -272,6 +300,7 @@ h1 {
 }
 
 @keyframes fadeIn {
+<<<<<<< HEAD
     from {
         opacity: 0;
         transform: translateY(-10px);
@@ -314,6 +343,30 @@ h1 {
 
     .container > * {
         position: relative;
+=======
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start;
+        padding: 18px 14px;
+    }
+
+    .container {
+        width: 100%;
+        min-height: auto;
+        padding: 38px 18px;
+        border-radius: 22px;
+        margin: 0;
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
     }
 
     .food-container {
@@ -321,6 +374,7 @@ h1 {
     }
 
     h1 {
+<<<<<<< HEAD
         font-size: clamp(2rem, 10vw, 2.75rem);
         margin-bottom: 26px;
         text-wrap: balance;
@@ -336,6 +390,13 @@ h1 {
         border-radius: 999px;
         background: #fff0f6;
         border: 1px solid #ffd1df;
+=======
+        margin-bottom: 28px;
+    }
+
+    .subtitle {
+        margin: -12px 0 22px;
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
         font-size: 0.9rem;
         line-height: 1.4;
     }
@@ -350,6 +411,7 @@ h1 {
     .btn {
         width: 100%;
         min-width: 0;
+<<<<<<< HEAD
         min-height: 56px;
         padding: 13px 16px;
         font-size: 1rem;
@@ -360,6 +422,12 @@ h1 {
 
     .btn:active {
         transform: scale(0.98);
+=======
+        min-height: 52px;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: 14px;
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
     }
 
     .btn.no.running {
@@ -368,6 +436,7 @@ h1 {
     }
 
     .date-form {
+<<<<<<< HEAD
         gap: 15px;
     }
 
@@ -387,10 +456,19 @@ h1 {
         font-size: 1rem;
         background: white;
         box-shadow: 0 10px 22px rgba(181, 37, 93, 0.08);
+=======
+        gap: 16px;
+    }
+
+    .field input {
+        min-height: 52px;
+        font-size: 1rem;
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
     }
 
     .restaurant-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+<<<<<<< HEAD
         gap: 14px;
     }
 
@@ -437,6 +515,37 @@ h1 {
         border-radius: 20px;
         background: linear-gradient(180deg, #ffffff 0%, #fff7fb 100%);
         box-shadow: 0 10px 22px rgba(181, 37, 93, 0.1);
+=======
+        gap: 12px;
+    }
+
+    .restaurant-card {
+        min-height: 142px;
+        padding: 14px 10px;
+        border-radius: 18px;
+        font-size: 0.95rem;
+    }
+
+    .restaurant-card img {
+        width: 72px;
+        height: 72px;
+        border-radius: 15px;
+        padding: 10px;
+    }
+
+    .submit-choice {
+        margin-top: 18px;
+    }
+
+    .info-list {
+        gap: 12px;
+    }
+
+    .info-item {
+        gap: 12px;
+        padding: 14px;
+        border-radius: 16px;
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
     }
 
     .info-item i {
@@ -455,7 +564,10 @@ h1 {
     .sad {
         font-size: 1.15rem;
         line-height: 1.35;
+<<<<<<< HEAD
         margin-top: 18px;
+=======
+>>>>>>> b1ba2133115ea59b78ae1009d52d416c6346af48
     }
 }
 
