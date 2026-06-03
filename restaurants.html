@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="love.css">
 </head>
 <body>
-    <div class="container food-container">
+    <div class="floating-hearts" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="container food-container">
         <h1>Where should we eat?</h1>
         <p class="subtitle" id="dateSummary"></p>
 
@@ -44,7 +52,7 @@
             <i class="bi bi-check-circle-fill"></i>
         </button>
         <div id="message"></div>
-    </div>
+    </main>
 
     <script>
         const dateDay = localStorage.getItem('dateDay');
@@ -73,7 +81,10 @@
                 return;
             }
 
-            window.location.href = 'date-info.html';
+            document.body.classList.add('page-leaving');
+            window.setTimeout(() => {
+                window.location.href = 'date-info.html';
+            }, 320);
         }
     </script>
 </body>

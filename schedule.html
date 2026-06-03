@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="love.css">
 </head>
 <body>
-    <div class="container">
+    <div class="floating-hearts" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="container">
         <h1>So when you are free</h1>
         <form class="date-form" onsubmit="confirmSchedule(event)">
             <label class="field">
@@ -27,7 +35,7 @@
             </button>
         </form>
         <div id="message"></div>
-    </div>
+    </main>
 
     <script>
         function confirmSchedule(event) {
@@ -37,7 +45,10 @@
             const time = document.getElementById('time').value;
             localStorage.setItem('dateDay', date);
             localStorage.setItem('dateTime', time);
-            window.location.href = 'restaurants.html';
+            document.body.classList.add('page-leaving');
+            window.setTimeout(() => {
+                window.location.href = 'restaurants.html';
+            }, 320);
         }
     </script>
 </body>

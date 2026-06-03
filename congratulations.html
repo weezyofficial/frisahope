@@ -8,18 +8,29 @@
     <link rel="stylesheet" href="love.css">
 </head>
 <body>
-    <div class="container">
+    <div class="floating-hearts" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <main class="container">
         <h1>Thank You Saying Yes</h1>
         <button class="btn yes" type="button" onclick="goToSchedule()">
             <span>Okay to proceed next</span>
             <i class="bi bi-arrow-right-circle-fill"></i>
         </button>
         <div id="message"></div>
-    </div>
+    </main>
 
     <script>
         function goToSchedule() {
-            window.location.href = 'schedule.html';
+            document.body.classList.add('page-leaving');
+            window.setTimeout(() => {
+                window.location.href = 'schedule.html';
+            }, 320);
         }
     </script>
 </body>
